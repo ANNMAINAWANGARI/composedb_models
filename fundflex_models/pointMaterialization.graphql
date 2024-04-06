@@ -1,0 +1,17 @@
+type PointClaims @loadModel(id: "kjzl6hvfrbw6c7b8jmdvhgsbict4suxfm2e51hsp5q6t63wndnp83wonozmdi56") {
+  id: ID!
+} 
+
+type PointMaterializations
+  @createModel(
+    accountRelation: LIST
+    description: "A point materialization model"
+  )
+  @createIndex(fields: [{ path: ["recipient"] }]) {
+  issuer: DID! @documentAccount
+  recipient: DID! @accountReference
+  context: String @string(maxLength: 1000000)
+  value: Int!
+  pointClaimsId: StreamID! @documentReference(model: "PointClaims")
+  pointClaim: PointClaims! @relationDocument(property: "pointClaimsId")
+}

@@ -1,0 +1,16 @@
+type EthDenverAttendance
+  @createModel(
+    accountRelation: LIST
+    description: "An loan step confirmation for fundflex"
+  )
+  @createIndex(fields: [{ path: ["recipient"] }])
+  @createIndex(fields: [{ path: ["step"] }])
+  @createIndex(fields: [{ path: ["timestamp"] }])
+  @createIndex(fields: [{ path: ["issuer"] }]) {
+  controller: DID! @documentAccount
+  issuer: DID! @accountReference
+  recipient: String! @string(minLength: 42, maxLength: 42)
+  step: String! @string(maxLength: 100)
+  timestamp: DateTime!
+  jwt: String! @string(maxLength: 100000)
+}
