@@ -1,9 +1,9 @@
 ### COMPOSEDB MODELS
 
 ### TODO(S)
-- [✓] use sample from Ceramic EthDenver Points Model
-- [✓] test on graphql:server 
-- [x] intergrate with frontend
+- [x] use sample from Ceramic EthDenver Points Model
+- [x] test on graphql:server 
+- [] intergrate with frontend
 
 ## MODEL IDEA
 - Conversation Model
